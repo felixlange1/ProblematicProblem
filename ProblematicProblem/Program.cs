@@ -97,23 +97,23 @@ public class Program
 
         Console.WriteLine();
         int randomNumber = rng.Next(activities.Count);
-        string firstRandomActivity = activities[randomNumber];
-        if (userAge < 21 && firstRandomActivity == "Wine Tasting")
+        string randomActivity = activities[randomNumber];
+        if (userAge < 21 && randomActivity == "Wine Tasting")
         {
-            Console.WriteLine($"Oh no! Looks like you are too young to do {firstRandomActivity}");
+            Console.WriteLine($"Oh no! Looks like you are too young to do {randomActivity}");
             Console.WriteLine("Pick something else!");
-            activities.Remove(firstRandomActivity);
+            activities.Remove(randomActivity);
         }
         else
         {
-            Console.WriteLine($"Your randomly generated activity is {firstRandomActivity}");
+            Console.WriteLine($"Your randomly generated activity is {randomActivity}");
             Console.WriteLine("Are you satisfied with that or would you like to choose another? Yes/No");
 
             UserInput();
             if (!cont)
             {
                 {
-                    Console.WriteLine($"Have fun with {firstRandomActivity}! Goodbye!");
+                    Console.WriteLine($"Have fun with {randomActivity}! Goodbye!");
                 }
                 return;
             }
@@ -121,8 +121,8 @@ public class Program
             while (cont)
             {
                 randomNumber = rng.Next(activities.Count);
-                string secondRandomActivity = activities[randomNumber];
-                Console.Write($"Ah got it! {userName}, your random activity is: {secondRandomActivity}! Is this ok or do you want to grab another activity? Yes/No: ");
+                randomActivity = activities[randomNumber];
+                Console.Write($"Ah got it! {userName}, your random activity is: {randomActivity}! Is this ok or do you want to grab another activity? Yes/No: ");
                 Console.WriteLine();
                 UserInput();
                 Console.WriteLine();
